@@ -29,10 +29,11 @@
 
         $httpBackend.whenGET(productUrl).respond(products);
 
-        var editingRegex = new RegExp(productUrl + "/[0-9][0-9]*", '');
+        var editingRegex = new RegExp(productUrl + '/[0-9][0-9]*', '');
+            alert('here');
 
         $httpBackend.whenGET(editingRegex).respond(function(method, url, data) {
-            var product = {"productId": 0};
+            var product = {'productId': 0};
             var parameters = url.split('/');
             var length = parameters.length;
             var id = parameters[length - 1];
