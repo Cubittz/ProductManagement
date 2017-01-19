@@ -1,4 +1,24 @@
 (function() {
     "use strict";
-    var app = angular.module("productManagement", ['common.services', 'productResourceMock']);
+    var app = angular.module("productManagement", ['common.services', 'ui.router', 'productResourceMock']);
+
+    app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+        $stateProvider
+            .state('home', {
+                url: '/',
+                templateUrl: 'app/welcomeView.html'
+            })
+            // products
+            .state('productList', {
+                url: '/products',
+                templateUrl: 'app/products/productListView.html',
+                controller: 'productListController as vm'
+            })
+            .state('productEdit', {
+                url: '/products/edit/:productId',
+                templateUrl: 'app/products/productEditView.html',
+                controller: 'productEditController as vm'
+            })
+        $urlRouterProvider.otherwise('/');
+    }]);
 }());
