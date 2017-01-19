@@ -22,13 +22,13 @@
                     .state("productList", {
                         url: "/products",
                         templateUrl: "app/products/productListView.html",
-                        controller: "productListController as vm"
+                        controller: "ProductListCtrl as vm"
                     })
                     .state("productEdit", {
                         abstract: true,
                         url: "/products/edit/:productId",
                         templateUrl: "app/products/productEditView.html",
-                        controller: "productEditController as vm",
+                        controller: "ProductEditCtrl as vm",
                         resolve: {
                             productResource: "productResource",
 
@@ -54,7 +54,7 @@
                     .state("productDetail", {
                         url: "/products/:productId",
                         templateUrl: "app/products/productDetailView.html",
-                        controller: "productDetailController as vm",
+                        controller: "ProductDetailCtrl as vm",
                         resolve: {
                             productResource: "productResource",
 

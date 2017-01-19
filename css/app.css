@@ -2,7 +2,7 @@ body {
     background-color: #C6D9F1;
 }
 
-.wizard {
+.wizard a {
     background: #efefef;
     display: inline-block;
     margin-right: 5px;
@@ -13,6 +13,6 @@ body {
     text-decoration: none;
 }
 .wizard .active {
-    background: #007acc;
+    background: #007ACC;
     color: #fff;
 }

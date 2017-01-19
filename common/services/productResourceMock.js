@@ -1,9 +1,14 @@
-(function(){
-    'use strict';
+/**
+ * Created by Deb on 8/21/2014.
+ */
+(function () {
+    "use strict";
 
-    var app = angular.module('productResourceMock', ['ngMockE2E']);
+    var app = angular
+                .module("productResourceMock",
+                        ["ngMockE2E"]);
 
-    app.run(function($httpBackend){
+    app.run(function ($httpBackend) {
         var products = [
             {
                 "productId": 1,
@@ -111,5 +116,7 @@
 
         // Pass through any requests for application files
         $httpBackend.whenGET(/app/).passThrough();
-    });
-})();
+
+
+    })
+}());
